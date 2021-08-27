@@ -5,10 +5,10 @@ import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.viewbinding.ViewBindings
+import androidx.databinding.ViewDataBinding
 import com.hemanthddev.rickandmorty.ext.observe
 
-abstract class BaseActivity<DB : ViewBindings, VM : BaseViewModel> : AppCompatActivity() {
+abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel> : AppCompatActivity() {
 
     private lateinit var viewModel: VM
     private lateinit var binding: DB
