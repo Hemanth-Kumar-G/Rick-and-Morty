@@ -8,6 +8,24 @@
     <fragment
         android:id="@+id/charactersFragment"
         android:name="com.hemanthddev.rickandmorty.ui.characters.CharactersFragment"
-        tools:layout="@layout/characters_fragment" />
+        tools:layout="@layout/characters_fragment">
+        <action
+            android:id="@+id/action_characters_to_characterDetail"
+            app:destination="@id/characterDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/characterDetailFragment"
+        android:name="com.hemanthddev.rickandmorty.ui.characters.details.CharacterDetailFragment"
+        tools:layout="@layout/character_detail_fragment">
+        <argument
+            android:name="characters"
+            app:argType="com.hemanthddev.rickandmorty.data.model.Character"
+            app:nullable="false" />
+    </fragment>
 
 </navigation>

@@ -11,8 +11,10 @@
         <entry key="..\:/hemanth/RickandMorty/app/src/main/res/drawable/ic_launcher_background.xml" value="0.15052083333333333" />
         <entry key="..\:/hemanth/RickandMorty/app/src/main/res/drawable/ic_status_circle.xml" value="0.15052083333333333" />
         <entry key="..\:/hemanth/RickandMorty/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/hemanth/RickandMorty/app/src/main/res/layout/character_detail_fragment.xml" value="0.134375" />
         <entry key="..\:/hemanth/RickandMorty/app/src/main/res/layout/characters_fragment.xml" value="0.2609375" />
         <entry key="..\:/hemanth/RickandMorty/app/src/main/res/layout/episodes_fragment.xml" value="0.2609375" />
+        <entry key="..\:/hemanth/RickandMorty/app/src/main/res/layout/fragment_character_detail.xml" value="0.134375" />
         <entry key="..\:/hemanth/RickandMorty/app/src/main/res/layout/item_character.xml" value="0.25" />
         <entry key="..\:/hemanth/RickandMorty/app/src/main/res/layout/item_network_state.xml" value="0.2609375" />
         <entry key="..\:/hemanth/RickandMorty/app/src/main/res/layout/locations_fragment.xml" value="0.2609375" />

@@ -13,19 +13,35 @@ import javax.inject.Inject
 class CharacterAdapter @Inject constructor() :
     PagingDataAdapter<Character, CharacterAdapter.CharacterViewHolder>(CharacterComparator) {
 
+    var onCharacterClickListener: ((binding: ItemCharacterBinding, character: Character) -> Unit)? =
+        null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         CharacterViewHolder(
-            ItemCharacterBinding.inflate(
+            binding = ItemCharacterBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
-            )
+            ),
+            onCharacterClickListener = onCharacterClickListener
         )
 
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
         getItem(position)?.let { holder.bind(it) }
     }
 
-    inner class CharacterViewHolder(private val binding: ItemCharacterBinding) :
+    inner class CharacterViewHolder(
+        private val binding: ItemCharacterBinding,
+        onCharacterClickListener: ((binding: ItemCharacterBinding, character: Character) -> Unit)?
+    ) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            itemView.setOnClickListener {
+                onCharacterClickListener?.invoke(
+                    binding,
+                    getItem(absoluteAdapterPosition) as Character
+                )
+            }
+        }
 
         fun bind(item: Character) = with(binding) {
             ViewCompat.setTransitionName(binding.ivAvatar, "avatar_${item.id}")

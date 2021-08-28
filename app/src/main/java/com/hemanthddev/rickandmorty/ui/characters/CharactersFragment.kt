@@ -1,18 +1,20 @@
 package com.hemanthddev.rickandmorty.ui.characters
 
-import android.util.Log
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.FragmentNavigatorExtras
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import com.hemanthddev.rickandmorty.R
 import com.hemanthddev.rickandmorty.base.BaseFragment
+import com.hemanthddev.rickandmorty.data.model.Character
 import com.hemanthddev.rickandmorty.databinding.CharactersFragmentBinding
+import com.hemanthddev.rickandmorty.databinding.ItemCharacterBinding
 import com.hemanthddev.rickandmorty.ui.adapter.CharacterAdapter
 import com.hemanthddev.rickandmorty.util.PagingLoadStateAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import javax.inject.Inject
 
-private const val TAG = "CharactersFragment"
 
 @AndroidEntryPoint
 class CharactersFragment : BaseFragment<CharactersFragmentBinding, CharactersViewModel>() {
@@ -54,8 +56,22 @@ class CharactersFragment : BaseFragment<CharactersFragmentBinding, CharactersVie
                         }
                     }
                 }
+                onCharacterClickListener = { binding, character ->
+                    onCharacterClicked(binding, character)
+                }
             }
         }
+    }
 
+    private fun onCharacterClicked(binding: ItemCharacterBinding, character: Character) {
+        val extras = FragmentNavigatorExtras(
+            binding.ivAvatar to "avatar_${character.id}",
+            binding.tvName to "name_${character.id}",
+            binding.tvStatus to "status_${character.id}"
+        )
+        findNavController().navigate(
+            CharactersFragmentDirections.actionCharactersToCharacterDetail(character),
+            extras
+        )
     }
 }
