@@ -4,6 +4,8 @@ import com.hemanthddev.rickandmorty.data.repository.character.CharacterRepositor
 import com.hemanthddev.rickandmorty.data.repository.character.CharacterRepositoryImpl
 import com.hemanthddev.rickandmorty.data.repository.episode.EpisodeRepository
 import com.hemanthddev.rickandmorty.data.repository.episode.EpisodeRepositoryImpl
+import com.hemanthddev.rickandmorty.data.repository.location.LocationRepository
+import com.hemanthddev.rickandmorty.data.repository.location.LocationRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -18,4 +20,7 @@ abstract class RepositoryModule {
 
     @Binds
     abstract fun bindEpisodeRepository(episodeRepositoryImpl: EpisodeRepositoryImpl): EpisodeRepository
+
+    @Binds
+    abstract fun bindLocationRepository(locationRepositoryImpl: LocationRepositoryImpl): LocationRepository
 }

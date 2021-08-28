@@ -18,5 +18,3 @@ w
 Gapp/src/main/java/com/hemanthddev/rickandmorty/ui/main/MainViewModel.kt,1\7\17aa016ba6bbdd721dcda1dcfdcdfbbc5c9f0b61
 s
 Capp/src/main/java/com/hemanthddev/rickandmorty/base/BaseActivity.kt,a\d\adefa37758ede80b47f0ea549c2da7ddcaf9cdec
-p
-@app/src/main/java/com/hemanthddev/rickandmorty/ext/Navigation.kt,d\b\db36a6b1337274b9c910553e8db5048f3efddece
